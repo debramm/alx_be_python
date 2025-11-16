@@ -1,6 +1,5 @@
 task = input("Enter your task: ").strip()
 
-
 priority = input("Priority (high/medium/low): ").strip().lower()
 while priority not in ["high", "medium", "low"]:
     print("Invalid priority! Please enter 'high', 'medium', or 'low'.")
@@ -15,16 +14,17 @@ while time_bound not in ["yes", "no"]:
 
 match priority:
     case "high":
-        reminder = f"'{task}' is a high priority task"
+        priority_message = "high priority task"
     case "medium":
-        reminder = f"'{task}' is a medium priority task"
+        priority_message = "medium priority task"
     case "low":
-        reminder = f"'{task}' is a low priority task"
+        priority_message = "low priority task"
+
 
 if time_bound == "yes":
-    reminder += " that requires immediate attention today!"
+    reminder_message = f"{task}' is a {priority_message} that requires immediate attention today!"
 else:
-    reminder += ". Consider completing it when you have free time."
+    reminder_message = f"'{task}' is a {priority_message}. Consider completing it when you have free time."
 
 
-print("\nReminder:", reminder)
+print(f"Reminder: {reminder_message}")
